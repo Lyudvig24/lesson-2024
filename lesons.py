@@ -213,13 +213,123 @@
 
 
 
+# import requests
 
 
 
-def weather_check():
-    return 1
+# def weather_check(city):
+#     api_token = "e4d6d1f0b51027b7f69dde004f4b4f31"
+#     url = "https://api.openweathermap.org/data/2.5/weather"
+#     params = { 
+#         'q': city,
+#         'appid': api_token,
+#         'units': 'metric'
+#     }   
+#     responese = requests.get(url,params=params)
+#     data = responese.json()
+#     country = data['sys']['country']
+#     city = data['name']
+#     temperature = data['main']['temp']
+#     feels_like_temp = data['main']['feels_like']
+#     cloud_cover = data['weather'][0]['description']
+#     speed_wind = data['wind']['speed']
+#     humidity = data['main']['humidity']
 
-print(__name__)
+
+
+    
+#     print(f"Country--{country}\nCity--{city}\nTemperature--{temperature}\nFeels_like--{feels_like_temp}\nCloud_Cover--{cloud_cover}\nSpeed_Win--{speed_wind}\nHumidity--{humidity}")
+# if __name__=="__main__":
+#     print("Current Weather In Your City")
+#     city = input("Enter Your City: ")
+
+#     weather_check(city)
+
+
+
+
+
+
+
+# def hangman_game(maxTries, word):
+#     letters = []
+#     output = []
+
+#     for let in word:
+#         output.append('*')
+
+#     alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+#     for i in range(1, maxTries + 1):
+#         answer = input("Write Letter from " + ','.join(alphabet) + ' :').upper()
+
+#         if answer in alphabet:
+#             alphabet.remove(answer)
+
+#         hasWon = True
+
+#         if answer in word:
+#             letters.append(answer)
+
+#         for k, w in enumerate(word):
+#             if w not in letters:
+#                 hasWon = False
+
+#             if w == answer:
+#                 output[k] = w
+
+#         print('output', ''.join(output))
+
+#         if hasWon:
+#             print("You Win")
+#             break
+
+#         elif i == maxTries:
+#             print('You Lose')
+
+
+# maxTries = 7
+# word = 'FISH'.upper()
+# hangman_game(maxTries, word)
+
+
+def hangman_game(maxTrires,word):
+    letters = []
+    output = []
+    for let in word:
+        output.append('*')
+
+    alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    for i in range(1,maxTrires+1):
+        answer = input("Write a letter: " + ',' ''.join(alphabet) + ' : ').upper()
+        if answer in alphabet:
+            alphabet.remove(answer)
+
+        hasWon = True
+        if answer in word:
+            letters.append(answer)
+        for k,w in enumerate(word):
+            if w not in letters:
+                hasWon = False
+
+            if w == answer:
+                output[k] = w
+
+        print("output", ''.join(output))
+
+        if hasWon:
+            print("You Win")
+            break
+        elif i == maxTrires:
+            print("You Lose")
+
+maxTries = 7
+word = 'Laptop'.upper()
+hangman_game(maxTries,word)
+
+
+
+
+
 
 
 

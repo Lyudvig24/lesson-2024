@@ -292,39 +292,7 @@
 # hangman_game(maxTries, word)
 
 
-def hangman_game(maxTrires,word):
-    letters = []
-    output = []
-    for let in word:
-        output.append('*')
 
-    alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-    for i in range(1,maxTrires+1):
-        answer = input("Write a letter: " + ',' ''.join(alphabet) + ' : ').upper()
-        if answer in alphabet:
-            alphabet.remove(answer)
-
-        hasWon = True
-        if answer in word:
-            letters.append(answer)
-        for k,w in enumerate(word):
-            if w not in letters:
-                hasWon = False
-
-            if w == answer:
-                output[k] = w
-
-        print("output", ''.join(output))
-
-        if hasWon:
-            print("You Win")
-            break
-        elif i == maxTrires:
-            print("You Lose")
-
-maxTries = 7
-word = 'Laptop'.upper()
-hangman_game(maxTries,word)
 
 
 

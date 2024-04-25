@@ -252,60 +252,154 @@
 
 
 
-import random
+# import random
 
-def random_words():
-    with open('randomwords.txt','r') as file:
-        words = file.read().split()
-        rand = random.choice(words)
-        return rand
+# def random_words():
+#     with open('randomwords.txt','r') as file:
+#         words = file.read().split()
+#         rand = random.choice(words)
+#         return rand
 
 
-def hangman_game(maxTries, word):
-    letters = []
-    output = []
+# def hangman_game(maxTries, word):
+#     letters = []
+#     output = []
 
-    for _ in word:
-        output.append('*')
+#     for _ in word:
+#         output.append('*')
     
-    print('initial output', ''.join(output))
+#     print('initial output', ''.join(output))
 
-    alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-    for i in range(1, maxTries + 1):
-        answer = input("Write Letter from " + ','.join(alphabet) + ' :' ).upper()
+#     alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+#     for i in range(1, maxTries + 1):
+#         answer = input("Write Letter from " + ','.join(alphabet) + ' :' ).upper()
 
-        if answer in alphabet:
-            alphabet.remove(answer)
+#         if answer in alphabet:
+#             alphabet.remove(answer)
 
-        if answer in word:
-            letters.append(answer)
+#         if answer in word:
+#             letters.append(answer)
         
-        hasWon = True
+#         hasWon = True
 
-        for k, w in enumerate(word):
-            if w not in letters:
-                hasWon = False
+#         for k, w in enumerate(word):
+#             if w not in letters:
+#                 hasWon = False
 
-            if w == answer:
-                output[k] = w
+#             if w == answer:
+#                 output[k] = w
 
-        print('output', ''.join(output))
+#         print('output', ''.join(output))
          
-        if hasWon:
-            print("You Win")
-            break
+#         if hasWon:
+#             print("You Win")
+#             break
 
-        elif i == maxTries:
-            print('You Lose, the word is: ', word)
+#         elif i == maxTries:
+#             print('You Lose, the word is: ', word)
     
 
-word = random_words().upper()
-maxTries = 7
+# word = random_words().upper()
+# maxTries = 7
 
-if(len(word) > maxTries):
-    maxTries = len(word) + 1
+# if(len(word) > maxTries):
+#     maxTries = len(word) + 1
 
-hangman_game(maxTries, word)
+# hangman_game(maxTries, word)
+
+
+
+
+# def filter_words():
+#     with open('filter_file.txt','r') as file:
+#         text = file.read().split()
+#         filter_text = {}
+    
+#         for i in text:
+#             if i.isalpha():
+#                 filter_text.setdefault(i,0)
+#                 filter_text[i] += 1
+            
+#         max_word = max(filter_text,key=filter_text.get)
+#         return max_word
+                
+    
+                
+        
+
+# print(filter_words())
+
+
+
+
+# import os
+# import shutil
+
+# excludeFiles = ['lessons.py','filter_file.txt','weather.py','randomwords.txt']
+
+# def get_file_extension(file_name):
+#     if not file_name:
+#         return None
+#     return file_name.split('.')[-1].lower()
+
+# def file_types():
+#     data = {}
+#     for fileName in os.listdir('.'):
+#         if os.path.isfile(fileName) and fileName not in excludeFiles:
+#             type = get_file_extension(fileName)
+#             data.setdefault(type,[])
+#             data[type].append(fileName)
+    
+#     for type in data:
+#         files = data[type]
+#         if os.path.isdir(type) == False:
+#             os.makedirs(type)
+
+#         for newFileName in files:
+#             shutil.move(newFileName, type + '/' + newFileName)
+
+#     return data
+        
+# print(file_types())
+
+
+
+import os 
+import shutil
+
+
+excludeFiles = ['lessons.py','weather.py','filter.txt','randomwords.txt']
+
+def get_file_extension(file_name):
+    if not file_name:
+        return None
+    return file_name.split('.')[-1].lower()
+
+
+def file_types():
+    data = {}
+    for fileName in os.listdir('.'):
+        if os.path.isfile(fileName) and fileName not in excludeFiles:
+            type = get_file_extension(fileName)
+            data.setdefault(type,[])
+            data[type].append(fileName)
+
+
+    for type in data:
+        files = data[type]
+        if os.path.isdir(type) == False:
+            os.makedirs(type)
+
+        for newFilename in files:
+            shutil.move(newFilename, type + '/' + newFilename)
+    return data
+
+print(file_types())
+
+    
+
+
+
 
 
 # def sumarr(mlist):
@@ -337,11 +431,6 @@ hangman_game(maxTries, word)
 #         return 1 + len_arr(mlist[1:])
     
 # print(len_arr(mlist=([1,2,3])))
-
-
-
-
-
 
 
 

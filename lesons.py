@@ -214,6 +214,8 @@
 
 
 # import requests
+# import argparse
+
 
 
 
@@ -234,6 +236,8 @@
 #     cloud_cover = data['weather'][0]['description']
 #     speed_wind = data['wind']['speed']
 #     humidity = data['main']['humidity']
+
+
 
 
 

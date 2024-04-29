@@ -1,54 +1,161 @@
-# import random
 
-# def random_words():
-#     with open('randomwords.txt','r') as file:
-#         words = file.read().split()
-#         rand = random.choice(words)
-#         return rand
+# Importing the random module for generating random words
+import random
 
 
-# def hangman_game(maxTries, word):
-#     letters = []
-#     output = []
+# Function to randomly select a word from a file
+def random_words():
+    with open('randomwords.txt','r') as file:
+        words = file.read().split()
+        rand = random.choice(words)
+        return rand
 
-#     for _ in word:
-#         output.append('*')
+
+# Function to return a list representations of hangman pictures
+def picture():
+    picture_list = ['''
+       +---+
+           |
+           |
+           |
+          ===''', '''
+       +---+
+       O   |
+           |
+           |
+          ===''', '''
+       +---+
+       O   |
+       |   |
+           |
+          ===''', '''
+       +---+
+       O   |
+      /|   |
+           |
+          ===''', '''
+       +---+
+       O   |
+      /|\  |
+           |
+          ===''', '''
+       +---+
+       O   |
+      /|\  |
+      /    |
+          ===''', '''
+       +---+
+       O   |
+      /|\  |
+      / \  |
+          ===''']
+    return picture_list
+
     
-#     print('initial output', ''.join(output))
+# Function to implement the hangman game
+def hangman_game(word):
 
-#     alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-#     for i in range(1, maxTries + 1):
-#         answer = input("Write Letter from " + ','.join(alphabet) + ' :' ).upper()
+    # List to store guessed letters
+    letters = []
 
-#         if answer in alphabet:
-#             alphabet.remove(answer)
+    # List to store the display of the word with guessed letters
+    output = []
 
-#         if answer in word:
-#             letters.append(answer)
+    # Get the list of hangman pictures
+    pict = picture()
+
+    # Initialize the output list with '*' characters for each letter in the word
+    for let in word:
+        output.append('*')
+    
+
+    # Print the initial display of the word
+    print('initial output', ''.join(output))
+
+    
+    alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+
+    # Index to track hangman picture displayed
+    index = -1
+
+    # Loop to play the game until the player wins or loses
+    while(index < 7):
+
+        # Increment the index to display the next hangman picture
+        index += 1
+
+        if index == len(pict) - 1:
+            # Print the last hangman picture
+            print(pict[6])
+
+             # Print a message indicating loss
+            print('You Lose, the word is: ', word)
+
+            # Exit the loop since the player has lost
+            break
+
+        # Print the current hangman picture
+        print(pict[index])
         
-#         hasWon = True
+        # Prompt the player to input a letter and convert it to uppercase
+        answer = input("Write Letter from " + ','.join(alphabet) + ' :' ).upper()
 
-#         for k, w in enumerate(word):
-#             if w not in letters:
-#                 hasWon = False
+        # Check if the input letter is in the alphabet list
+        if answer in alphabet:
 
-#             if w == answer:
-#                 output[k] = w
+            # Remove the input letter from the alphabet list
+            alphabet.remove(answer)
 
-#         print('output', ''.join(output))
+         # Check if the input letter is in the word
+        if answer in word:
+            # Add the input letter to the list of guessed letters
+            letters.append(answer)
+             # Decremen the index to display the same hangman picture again
+            index -= 1
+      
+         # Variable to track if the player has won
+        hasWon = True
+        for k, w in enumerate(word):
+            if w not in letters:
+
+                # Set hasWon to False if any letter in the word is not guessed
+                hasWon = False
+
+             # If the guessed letter is in the word
+            if w == answer:
+
+                # Update the output list with the guessed letter
+                output[k] = w
+                
+        # Print the current display of the word
+        print('output', ''.join(output))
          
-#         if hasWon:
-#             print("You Win")
-#             break
+        # If the player has guessed all letters in the word
+        if hasWon:
+            print("You Win")
+            # Exit the loop since the player has won
+            break
 
-#         elif i == maxTries:
-#             print('You Lose, the word is: ', word)
-    
+       
 
-# word = random_words().upper()
-# maxTries = 7
 
-# if(len(word) > maxTries):
-#     maxTries = len(word) + 1
+# Get a random word for the hangman game
+word = random_words().upper()
 
-# hangman_game(maxTries, word)
+
+
+
+hangman_game(word)
+
+
+
+
+
+
+
+
+
+
+
+
+

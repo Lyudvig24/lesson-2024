@@ -25,10 +25,10 @@ def get_city_data(city):
 
         }
         
-        # Sending GET request to the API endpoint and getting the response
+    
         responese = requests.get(url, params=params)
 
-         # Parsing the JSON response
+         
         data = responese.json()
 
          # Handling exceptions (e.g., network error, invalid city name)
@@ -78,7 +78,7 @@ def main():
             print(f"Weather in {data['name']}:")
             print(f"Wind Speed: {data['wind']['speed']} m/s")
 
-    # Handling exceptions
+
     except Exception as ex:
         print(ex)
 

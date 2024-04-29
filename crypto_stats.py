@@ -27,7 +27,7 @@ def crypto_stats(name_filter,name_value):
                     # Sending GET request to the API endpoint
                     response = requests.get(url, params=params)
 
-                    # Extracting JSON data from the response
+                    
                     data = response.json()
 
                     # Looping through each cryptocurrency in the retrieved data
@@ -42,13 +42,13 @@ def crypto_stats(name_filter,name_value):
                         #Filtering based on user input criteria
                         if name_filter and name_filter.lower() and name_filter != symbol.lower():
                             continue
-
                         if name_value and market_cap < name_value:
                             continue
-                        # Displaying cryptocurrency information
+
+                        
                         print(f"Name: {name}, Symbol: {symbol}, Current_Price: {current_price}, Market_cap: {market_cap}, 24h Change: {price_change_24}")
                     
-                    # Adding a separator between iterations
+                
                     print("----------------")
                     # Delaying next iteration by 5 seconds
                     time.sleep(5)
@@ -57,7 +57,7 @@ def crypto_stats(name_filter,name_value):
             print("Please Wait:", e)
 
 
- # Getting user input for cryptocurrency name filter and market cap value filter
+
 name_filter = input("Write Cryto name: ")
 name_value = input("Write  value: ")
     
@@ -69,7 +69,5 @@ else:
     # Setting name_value to None if not provided by the user
     name_value = None
 
-# Displaying message before fetching cryptocurrency stats
 print("Crypto price for the last 24 hours")
-# Calling the crypto_stats function with user-provided filters
 crypto_stats(name_filter,name_value)

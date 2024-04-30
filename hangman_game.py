@@ -141,10 +141,6 @@ def hangman_game(word):
 
 # Get a random word for the hangman game
 word = random_words().upper()
-
-
-
-
 hangman_game(word)
 
 

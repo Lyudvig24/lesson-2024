@@ -1,5 +1,4 @@
 import pygame
-import time 
 clock = pygame.time.Clock()
 
 pygame.init()
@@ -28,8 +27,8 @@ enemy = pygame.image.load('mygame/roomba.png').convert_alpha()
 
 devil_list_in_game = []
 
-# game_sound = pygame.mixer.Sound('mygame/mario.mp3')
-# game_sound.play()
+game_sound = pygame.mixer.Sound('mygame/mario.mp3')
+game_sound.play()
 
 player_anim_count = 0
 
@@ -38,7 +37,7 @@ player_x = 150
 player_y = 250
 back_x = 0
 is_jump = False
-jump_count = 8
+jump_count = 10
 
 devil_timer = pygame.USEREVENT + 1
 pygame.time.set_timer(devil_timer,3000)
@@ -48,15 +47,18 @@ lose_laber = label.render("You Lose! ",False,('white'))
 restart_label = label.render("Restart ",False,('green'))
 rest_label = restart_label.get_rect(topleft=(210,200))
 bullet = pygame.image.load('mygame/bullet.png').convert_alpha()
-
+enemy_count = 0
+enemy_speed = 30
 bullets_left = 5
 bullets = []
 gameplay = True
 
 running = True
 while running:
+    
 
-    clock.tick(20)
+
+    clock.tick(enemy_speed)
     
     screen.blit(back_gr,(back_x,0))
     screen.blit(back_gr,(back_x + 618,0))
@@ -66,12 +68,17 @@ while running:
         player_rect = walk_left[0].get_rect(topleft = (player_x,player_y))
 
         if devil_list_in_game:
+            
             for (i ,el) in enumerate(devil_list_in_game):
                 screen.blit(enemy,el)
                 el.x -= 10
+                
 
                 if el.x < -10:
                     devil_list_in_game.pop(i)
+                    enemy_count += 1
+                    if enemy_count % 2 == 0:
+                        enemy_speed += 5
 
                 if player_rect.colliderect(el):
                     gameplay = False
@@ -90,7 +97,7 @@ while running:
                 game_sound = pygame.mixer.Sound('mygame/jump.mp3')
                 game_sound.play()
         else:
-            if jump_count >= -8:
+            if jump_count >= -10:
                 if jump_count > 0:
                     player_y  -= (jump_count**2) / 2
                 else:
@@ -98,7 +105,7 @@ while running:
                 jump_count -= 1 
             else:
                 is_jump = False
-                jump_count = 8
+                jump_count = 10
 
 
 
@@ -169,3 +176,4 @@ while running:
 
 
 
+print(enemy_count)

@@ -7,67 +7,67 @@
 
 
 
-state_codes = {
-    'Alabama': 'AL',
-    'Alaska': 'AK',
-    'American Samoa': 'AS',
-    'Arizona': 'AZ',
-    'Arkansas': 'AR',
-    'California': 'CA',
-    'Colorado': 'CO',
-    'Connecticut': 'CT',
-    'Delaware': 'DE',
-    'District Of Columbia': 'DC',
-    'Federated States Of Micronesia': 'FM',
-    'Florida': 'FL',
-    'Georgia': 'GA',
-    'Guam': 'GU',
-    'Hawaii': 'HI',
-    'Idaho': 'ID',
-    'Illinois': 'IL',
-    'Indiana': 'IN',
-    'Iowa': 'IA',
-    'Kansas': 'KS',
-    'Kentucky': 'KY',
-    'Louisiana': 'LA',
-    'Maine': 'ME',
-    'Marshall Islands': 'MH',
-    'Maryland': 'MD',
-    'Massachusetts': 'MA',
-    'Michigan': 'MI',
-    'Minnesota': 'MN',
-    'Mississippi': 'MS',
-    'Missouri': 'MO',
-    'Montana': 'MT',
-    'Nebraska': 'NE',
-    'Nevada': 'NV',
-    'New Hampshire': 'NH',
-    'New Jersey': 'NJ',
-    'New Mexico': 'NM',
-    'New York': 'NY',
-    'North Carolina': 'NC',
-    'North Dakota': 'ND',
-    'Northern Mariana Islands': 'MP',
-    'Ohio': 'OH',
-    'Oklahoma': 'OK',
-    'Oregon': 'OR',
-    'Palau': 'PW',
-    'Pennsylvania': 'PA',
-    'Puerto Rico': 'PR',
-    'Rhode Island': 'RI',
-    'South Carolina': 'SC',
-    'South Dakota': 'SD',
-    'Tennessee': 'TN',
-    'Texas': 'TX',
-    'Utah': 'UT',
-    'Vermont': 'VT',
-    'Virgin Islands': 'VI',
-    'Virginia': 'VA',
-    'Washington': 'WA',
-    'West Virginia': 'WV',
-    'Wisconsin': 'WI',
-    'Wyoming': 'WY'
-}
+# state_codes = {
+#     'Alabama': 'AL',
+#     'Alaska': 'AK',
+#     'American Samoa': 'AS',
+#     'Arizona': 'AZ',
+#     'Arkansas': 'AR',
+#     'California': 'CA',
+#     'Colorado': 'CO',
+#     'Connecticut': 'CT',
+#     'Delaware': 'DE',
+#     'District Of Columbia': 'DC',
+#     'Federated States Of Micronesia': 'FM',
+#     'Florida': 'FL',
+#     'Georgia': 'GA',
+#     'Guam': 'GU',
+#     'Hawaii': 'HI',
+#     'Idaho': 'ID',
+#     'Illinois': 'IL',
+#     'Indiana': 'IN',
+#     'Iowa': 'IA',
+#     'Kansas': 'KS',
+#     'Kentucky': 'KY',
+#     'Louisiana': 'LA',
+#     'Maine': 'ME',
+#     'Marshall Islands': 'MH',
+#     'Maryland': 'MD',
+#     'Massachusetts': 'MA',
+#     'Michigan': 'MI',
+#     'Minnesota': 'MN',
+#     'Mississippi': 'MS',
+#     'Missouri': 'MO',
+#     'Montana': 'MT',
+#     'Nebraska': 'NE',
+#     'Nevada': 'NV',
+#     'New Hampshire': 'NH',
+#     'New Jersey': 'NJ',
+#     'New Mexico': 'NM',
+#     'New York': 'NY',
+#     'North Carolina': 'NC',
+#     'North Dakota': 'ND',
+#     'Northern Mariana Islands': 'MP',
+#     'Ohio': 'OH',
+#     'Oklahoma': 'OK',
+#     'Oregon': 'OR',
+#     'Palau': 'PW',
+#     'Pennsylvania': 'PA',
+#     'Puerto Rico': 'PR',
+#     'Rhode Island': 'RI',
+#     'South Carolina': 'SC',
+#     'South Dakota': 'SD',
+#     'Tennessee': 'TN',
+#     'Texas': 'TX',
+#     'Utah': 'UT',
+#     'Vermont': 'VT',
+#     'Virgin Islands': 'VI',
+#     'Virginia': 'VA',
+#     'Washington': 'WA',
+#     'West Virginia': 'WV',
+#     'Wisconsin': 'WI',
+#     'Wyoming': 'WY'
+# }
 
 
 
@@ -239,52 +239,45 @@ state_codes = {
 
 
 
-# import requests
 
 
-# def change_rates(amount,base_currency,target_currency):
-#     url = f"https://api.exchangerate-api.com/v4/latest/{base_currency}"    
- 
-#     response = requests.get(url)
-#     if response.status_code == 200:
-#         data = response.json()
-#         rates = data['rates']
-#         if target_currency in rates:
-#             exchange_rates = rates[target_currency]
-#             converted_amount = amount * exchange_rates
-#             return converted_amount
-#         else:
-#             print(f"Eror: Target currency {target_currency} not found")
-#     else:
-#         print(f"Error: Failed to fetch exchange rates. Status code:{response.status_code}")
-#         return None
+
+
+
+
+
+# def find_leters():
+#     with open("letters.txt","r") as let:
+#         text = let.read().split()
+#         leters = {}
+#         for let in text:
+#             if let.isalpha():
+#                 if let not in leters:
+#                     leters[let] = 1
+#                 else:
+#                     leters[let] += 1
+#     return leters
+
+
+
+# def selection_Sort(arr):
+#     for ind in range(len(arr)):
+#         min_ind = ind
+#         for j in range(ind+1,len(arr)):
+#             if arr[j][1] < arr[min_ind][1]:
+#                 min_ind = j
+#         arr[ind],arr[min_ind] = arr[min_ind],arr[ind]
+#     return arr
 
 
 # def main():
-#     print("welcome to the Currency Converter")
-#     user_amount = (input("Enter the amount to converter: "))
+#     words = find_leters()
+#     words_list = list(words.items())
+#     sorted_list = selection_Sort(words_list)
+#     print(sorted_list)
+# main()
 
-#     if user_amount.isdigit() == False:
-#         print('Please write numeric value for the amount')
-#         return
-    
-#     amount = float(user_amount)
-#     source_currency = input("Enter the source currency: ").upper()
-#     target_currency = input("Enter the source currency: ").upper()
-
-
-#     converted_amount = change_rates(amount,source_currency,target_currency)
-#     if converted_amount is not None:
-#         print("\nConverted amount")
-#         print(f"{amount},{source_currency} is equivalent to {converted_amount:.2f} {target_currency}")
-
-# if __name__ == "__main__":
-#     main()
-
-
-
-
-
+# def binary_Search():
 
 
 

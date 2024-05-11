@@ -277,7 +277,245 @@
 #     print(sorted_list)
 # main()
 
-# def binary_Search():
 
 
 
+
+
+# def bubble_sort(aray,mydict):
+#     for i in range(len(aray)):
+#         for j in range(0,len(aray)-i-1):
+#             if mydict[aray[j]] > mydict[aray[j+1]]:
+               
+#                 mydict[aray[j]], mydict[aray[j+1]] = mydict[aray[j+1]], mydict[aray[j]]
+#     result = {}
+
+#     for l in array:
+#         result[l] = mydict[l]
+
+#     return result
+
+# mydict = {
+#      'a': 3,
+#      'd': 7,
+#      'c': 2,
+#      'r': 1
+# } 
+
+# array = list(mydict.keys())
+
+# print(bubble_sort(array,mydict))
+
+# def bubble_Sort(mylis,mydict):
+#     for i in range(len(mylis)):
+#         for j in range(0,len(mylis)-i-1):
+#             if mydict[mylis[j]] > mydict[mylis[j+1]]:
+
+#                 mydict[mylis[j]],mydict[mylis[j+1]] = mydict[mylis[j+1]],mydict[mylis[j]]
+
+
+#     result = {}
+#     for l in mylis:
+#         result[l] = mydict[l]
+
+#     return result
+
+
+# mydict = {
+#     "a":3,
+#     "b":8,
+#     "c": 1,
+#     "d": 2
+# }
+
+
+# mylis = list(mydict.keys())
+
+# print(bubble_Sort(mylis,mydict))
+
+
+# def bubble_sort(arr,mydcit):
+#     for i in range(len(arr)):
+#         for j in range(0,len(arr)-i-1):
+#             if mydcit[arr[j]] > mydcit[arr[j+1]]:
+#                 mydcit[arr[j]],mydcit[arr[j+1]] = mydcit[arr[j+1]],mydcit[arr[j]]
+#     result = {}
+#     for i in arr:
+#         result[i] = mydcit[i]
+#     return result
+
+# mydict = {
+#     'a': 3,
+#     'b': 4,
+#     'c': 1
+# }
+
+
+
+# arr = list(mydict.keys())
+
+# print(bubble_sort(arr,mydict))
+
+
+
+# def selection_sort(arr,dict,size):
+#     for i in range(size):
+#         min_ind = i
+#         for j in range(i+1,size):
+#             if dict[arr[j]] < dict[arr[min_ind]]:
+#                 min_ind = j
+#         arr[i],arr[min_ind] = arr[min_ind],arr[i]
+    
+#     results = {}
+
+#     for l in arr:
+#         results[l] = dict[l]
+    
+#     return results
+
+# dict = {
+#     "a": 5,
+#     "b": 1,
+#     "c": 2
+# }
+# arr = list(dict.keys())
+# size = len(arr)
+# print(selection_sort(arr,dict,size))
+
+
+
+
+def quick_sort(arr):
+    if len(arr) < 2:
+        return arr
+    
+    pivot = arr[0]
+    left  = [i for i in arr[1:] if i <= pivot]
+    right = [i for i in arr[1:] if i > pivot]
+
+    return quick_sort(left) + [pivot] + quick_sort(right)
+
+
+print(quick_sort([2,3,14,1,5,4]))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# def quick_sort(mlist):
+#     if len(mlist) < 2:
+#         return dict(mlist)
+
+#     pivot = mlist[0][1]
+
+#     left = [(k, v) for k, v in mlist[1:] if v <= pivot]
+#     right = [(k, v) for k, v in mlist[1:] if v > pivot]
+
+#     return {**quick_sort(left), mlist[0][0]: pivot, **quick_sort(right)}
+
+# mydict = {
+#     'a': 3,
+#     'd': 7,
+#     'c': 2,
+#     'r': 1
+# }
+
+# print(quick_sort(list(mydict.items())))
+
+
+
+
+
+
+# def binary_search(arr,x):
+#     low = 0
+#     high = len(arr) - 1
+#     mid = len(arr) // 2
+
+#     while arr[mid] != x and low <= high:
+#         if x > arr[mid]:
+#             low = mid +1
+#         else:
+#             high = mid -1
+#         mid = (low + high) //2
+    
+#     if low > high:
+
+
+#         print("no value")
+#     else:
+#         print("index = ", mid)
+
+# arr = [1,2,3,4,5,6,7,8,9]
+# x = 9
+# binary_search(arr,x)
+    
+
+
+
+
+
+
+
+        
+# def rec(mylist):
+#     if len(mylist) == 1:    
+#         return mylist[0]
+#     else:
+#         res = mylist[0] * rec(mylist[1:]) 
+#         print(res)
+#         return res
+
+# arr = [2,3,6,7]
+# print(rec(arr))
+
+
+
+    
+
+# def print_array_recursive(arr, index=0):
+#     if index < len(arr):
+#         print(arr[index])
+#         print_array_recursive(arr, index + 1)
+
+# my_array = [1, 2, 3, 4, 5]
+# print_array_recursive(my_array)
+
+
+
+# def double_array_recursive(arr, index=0):
+#     if index < len(arr):
+#         arr[index] *= 2
+#         double_array_recursive(arr, index + 1)
+
+
+# my_array = [1, 2, 3, 4, 5]
+# double_array_recursive(my_array)
+# print(my_array)  
+
+
+
+# def double_first_element_recursive(arr, index=0):
+#     if index == 0 and len(arr) > 0:
+#         arr[index] *= 2
+#     elif index < len(arr):
+#         double_first_element_recursive(arr, index + 1)
+
+
+# my_array = [7, 2, 3, 4, 5]
+# double_first_element_recursive(my_array)
+# print(my_array) 

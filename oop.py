@@ -165,8 +165,140 @@
 
 
         
+# class Car:
+#     def __init__(self,marka,model,year):
+#         self.__marka = marka
+#         self.__model = model
+#         self.__year = year
 
+#     def __setMarka__(self,marka):
+#         self.__marka = marka
         
+#     def __GetMarka__(self):
+#         return self.__marka
+    
+#     def __setModel__(self,model):
+#         self.__model = model
+
+#     def __GetModel__(self):
+#         return self.__model
+    
+#     def __serYear__(self,year):
+#         self.__year = year
+    
+#     def __getYear__(self):
+#         return self.__year
+    
+# auto = Car("Audi","rs6",2011)
+# auto.__setMarka__("BMW")
+# auto.__setModel__("X5")
+# auto.__serYear__(2010)
+# print(auto.__GetModel__(),auto.__GetMarka__(),auto.__getYear__())
+
+
+# class CarBavaria:
+#     def __init__(self,marka,model,year):
+#         self.__marka = marka
+#         self.__model = model
+#         self.__year = year
+
+#     @property
+#     def marka(self):
+#         return self.__marka
+
+#     @marka.setter
+#     def marka(self,marka):
+#         self.__marka = marka
+
+#     @property
+#     def model(self):
+#         return self.__model
+    
+#     @model.setter
+#     def model(self,model):
+#         self.__model = model
+
+#     @property
+#     def year(self):
+#         return self.__year
+    
+#     @year.setter
+#     def year(self,year):
+#         self.__year = year
+
+   
+    
+# auto = CarBavaria("audi","rs6",2016)
+# print(auto.marka)
+# print(auto.model)
+# print(auto.year)
+# auto.model = "vilis"
+# print(auto.model)
+
+
+# class Bavarian_Motors:
+#     def __init__(self,Marka,Model,Year,Hp,Color,Engine):
+#         self.__Marka = Marka
+#         self.__Model = Model
+#         self.__Year = Year
+#         self.__Hp = Hp
+#         self.__Color = Color
+#         self.__Engine = Engine
+#     @property
+#     def Marka(self):
+#         return self.__Marka
+        
+#     @Marka.setter
+#     def Marka(self,Marka):
+#         self.__Marka = Marka
+
+#     @property
+#     def Model(self):
+#         return self.__Model
+    
+#     @Model.setter
+#     def Model(self,Model):
+#         self.__Model = Model
+
+#     @property
+#     def Year(self):
+#         return self.__Year
+    
+#     @Year.setter
+#     def Year(self,Year):
+#         self.__Year = Year
+
+#     @property
+#     def Hp(self):
+#         return self.__Hp
+    
+#     @Hp.setter
+#     def Hp(self,Hp):
+#         self.__Hp = Hp
+
+#     @property
+#     def Color(self):
+#         return self.__Color
+    
+#     @Color.setter
+#     def Color(self,Color):
+#         self.__Color = Color
+
+#     @property
+#     def Engine(self):
+#         return self.__Engine
+    
+#     @Engine.setter
+#     def Engine(self,Engine):
+#         self.__Engine = Engine
+
+# Cars = Bavarian_Motors('Audi','RS6',2015, "410 Hp", "Blue","V6 Quattro")
+# print(Cars.Marka,Cars.Model,Cars.Color,Cars.Year,Cars.Hp,Cars.Engine)
+# Cars.Hp = "560 Hp"
+# print(Cars.Hp)
+# Cars.Color = "Red"
+# print(Cars.Color)
+
 # class BankAccount:
 #     def __init__(self,name,balance):
 #         self.name = name
@@ -254,69 +386,79 @@
 # print(n3)
 
 
-class MY_List:
-    def __init__(self, *values):
-        if values is None:
-            self.values = []
-        else:
-            self.values = list(values)
+# class MY_List:
+#     def __init__(self, *values):
+#         if values is None:
+#             self.values = []
+#         else:
+#             self.values = list(values)
 
-    def __len__(self):
-        return len(self.values)
+#     def __len__(self):
+#         return len(self.values)
     
-    def __reversed__(self):
-        return self.values[::-1]
+#     def __reversed__(self):
+#         return self.values[::-1]
     
-    def __pop__(self):
-        value = self.values[-1]
-        del self.values[-1]
-        return value
+#     def __pop__(self):
+#         value = self.values[-1]
+#         del self.values[-1]
+#         return value
     
-    def __append__(self,value):
-        return self.values + [value]
+#     def __append__(self,value):
+#         return self.values + [value]
     
-    def __extend__(self,value):
-        return self.values + value.values
-    
-
-    def __remove__(self):
-        del self.values[0]
-        return self.values
+#     def __extend__(self,value):
+#         return self.values + value.values
     
 
-    def __clear__(self):
-        self.values = []
-        return []
+#     def __remove__(self):
+#         del self.values[0]
+#         return self.values
     
-    def __count__(self):
-        count = 0
-        for i in self.values:
-            count += i
-        return count
+
+#     def __clear__(self):
+#         self.values = []
+#         return []
+    
+#     def __count__(self):
+#         count = 0
+#         for i in self.values:
+#             count += i
+#         return count
         
         
-    def __bubble_sort__(self):
+#     def __bubble_sort__(self):
         
 
-        for i in range(len(self.values)):
+#         for i in range(len(self.values)):
             
-            for j in range(0,len(self.values)-i - 1):
-                if self.values[j] > self.values[j+1]:
-                    temp = self.values[j]
+#             for j in range(0,len(self.values)-i - 1):
+#                 if self.values[j] > self.values[j+1]:
+#                     temp = self.values[j]
 
-                    self.values[j] = self.values[j+1] 
-                    self.values[j+1] = temp
+#                     self.values[j] = self.values[j+1] 
+#                     self.values[j+1] = temp
 
-        return self.values
+#         return self.values
     
 
-    def __str__(self):
-        return f"{self.values}"
+#     def __str__(self):
+#         return f"{self.values}"
 
-l2 = MY_List(9,8,7,6,5,4)
+# l2 = MY_List(9,8,7,6,5,4)
+# l3 = MY_List(1,2,4,5)
 
-print(l2.__bubble_sort__())
+# print(l2)
     
+
+
+
+
+
+
+
+
+
 
 
     

@@ -385,21 +385,18 @@
 
 
 
-def quick_sort(arr):
-    if len(arr) < 2:
-        return arr
+# def quick_sort(arr):
+#     if len(arr) < 2:
+#         return arr
     
-    pivot = arr[0]
-    left  = [i for i in arr[1:] if i <= pivot]
-    right = [i for i in arr[1:] if i > pivot]
+#     pivot = arr[0]
+#     left  = [i for i in arr[1:] if i <= pivot]
+#     right = [i for i in arr[1:] if i > pivot]
 
-    return quick_sort(left) + [pivot] + quick_sort(right)
-
-
-print(quick_sort([2,3,14,1,5,4]))
+#     return quick_sort(left) + [pivot] + quick_sort(right)
 
 
-
+# print(quick_sort([2,3,14,1,5,4]))
 
 
 
@@ -441,6 +438,7 @@ print(quick_sort([2,3,14,1,5,4]))
 
 
 
+
 # def binary_search(arr,x):
 #     low = 0
 #     high = len(arr) - 1
@@ -464,8 +462,6 @@ print(quick_sort([2,3,14,1,5,4]))
 # x = 9
 # binary_search(arr,x)
     
-
-
 
 
 
@@ -519,3 +515,11 @@ print(quick_sort([2,3,14,1,5,4]))
 # my_array = [7, 2, 3, 4, 5]
 # double_first_element_recursive(my_array)
 # print(my_array) 
+
+
+
+
+
+
+
+

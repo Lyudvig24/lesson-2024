@@ -236,6 +236,15 @@
 # print(auto.model)
 
 
+
+
+
+
+
+
+
+
+
 # class Bavarian_Motors:
 #     def __init__(self,Marka,Model,Year,Hp,Color,Engine):
 #         self.__Marka = Marka
@@ -359,31 +368,44 @@
          
 # class Number:
 #     def __init__(self, n):
-#         self.num = n
+#         self._num = n
+
 
 #     def __add__(self, other):
-#         n3 = Number(self.num + other.num)
+#         n3 = Number(self._num + other._num)
 #         return n3
     
+    
 #     def __sub__(self,other): 
-#         r2 = Number (self.num - other.num)
+#         r2 = Number (self._num - other._num)
 #         return r2
     
 #     def __mul__(self,other):
-#         r4 = Number(self.num * other.num)
+#         r4 = Number(self._num * other._num)
 #         return r4
     
 #     def __truediv__(self,other):
-#         r5 = Number(self.num / other.num)
+#         r5 = Number(self._num / other._num)
 #         return r5
 
 #     def __str__(self):
-#         return f" num {self.num}"
+
+
+#         return f" _num {self._num}"
     
-# n1 = Number(14)
-# n2 = Number(2)
-# print(n1/n2)
-# print(n3)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # class MY_List:
@@ -452,13 +474,215 @@
     
 
 
+# class Roman_to_int:
+#     def roman_to_int(self,s):
+#         rom_val = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+#         int_val = 0
+#         for i in range(len(s)):
+#             if i > 0 and rom_val[s[i]] > rom_val[s[i-1]]:
+#                 int_val += rom_val[s[i]]-2 * rom_val[s[i-1]]
+#             else:
+#                 int_val += rom_val[s[i]]
+#         return int_val
+    
+# print(Roman_to_int().roman_to_int(''))
 
 
 
 
 
+# class Person:
+    
+#     def __init__(self,fio,old,ps,weight):
+#         self.verify_fio(fio)
+#         self.verify_old(old)
+#         self.verify_weight(weight)
+#         self.verify_ps(ps)
 
+#         self.__fio = fio.split()
+#         self.__old = old
+#         self.__ps = ps
+#         self.__weight = weight
+  
+
+#     @classmethod
+#     def verify_fio(cls,fio):
+#         if type(fio) != str:
+#             raise TypeError ("FIO Must Be A String")
+
+
+#         f = fio.split()
+#         if len(f) != 3:
+#             raise TypeError ("Wrong Format FIO")
+        
+
+#     @classmethod
+#     def verify_old(cls,old):
+#         if type(old) != int or old < 14 or old > 98:
+#             raise TypeError ("OLD Must Be a Integer from [14; 98]")
+        
+
+
+#     @classmethod
+#     def verify_weight(cls,weight):
+#         if type(weight) != int or weight < 38:
+#             raise TypeError ("Weight Must Be a Float Integer from 38 and higher")
+        
+
+#     @classmethod
+#     def verify_ps(cls,ps):
+#         if type(ps) != int:
+#             raise TypeError ("The  Characters Must Be a Digits")
+        
+       
+
+#     @property
+#     def fio(self):
+#         return self.__fio
+    
+#     @fio.setter
+#     def fio(self,fio):
+#         self.verify_fio(fio)
+#         self.__fio = fio
+
+#     @property
+#     def old(self):
+#         return self.__old
+    
+#     @old.setter
+#     def old(self,old):
+#         self.verify_old(old)
+#         self.__old = old
+
+#     @property
+#     def weight(self):
+#         return self.__weight
+    
+#     @weight.setter
+#     def weight(self,weight):
+#         self.verify_weight(weight)
+#         self.__weight = weight
+    
+#     @property
+#     def ps(self):
+#         return self.__ps
+    
+#     @ps.setter
+#     def ps(self,ps):
+#         self.verify_ps(ps)
+#         self.__ps = ps
+
+
+# person = Person("Asoyan Lyudvig Ruslani",25,3778097890,63)
+# print(person.__dict__)
 
 
 
     
+        
+
+# class Stack:
+#     def __init__(self):
+#      self._items = []
+     
+
+
+#     def isempty(self):
+#         return self._items == []
+    
+#     def isfull(self):
+#        return len(self._items)
+     
+#     def push(self,item):
+#        self._items.append(item)
+        
+#     def pop(self):
+#        return self._items.pop()
+    
+    
+#     def get_top(self):
+#        return self._items[-1]
+
+
+# s = Stack()
+
+
+
+
+
+
+
+# class Number:
+#     def __init__(self, n):
+#         self._num = n
+
+
+#     def __add__(self, other):
+#         result = Number(self._num + other._num)
+#         return result
+    
+    
+#     def __sub__(self,other): 
+#         result = Number (self._num - other._num)
+#         return result
+    
+#     def __mul__(self,other):
+#         result = Number(self._num * other._num)
+#         return result
+    
+#     def __truediv__(self,other):
+#         result = Number(self._num / other._num)
+#         return result
+
+#     def __str__(self):
+
+
+#         return f" _num {self._num}"
+    
+
+
+
+
+# class Unamber(Number):
+#     def __init__(self,n):
+#         super().__init__(n)
+
+#     def only_pos(self):
+#         if self._num > 0:
+#             return True
+#         else:
+#             return False
+    
+#     def __mul__(self, other):
+#         if self.only_pos() and other.only_pos():
+#             result = Unamber(self._num * other._num)
+#             return result
+#         else:
+#             return "Cannot multiply non-positive numbers"
+    
+#     def __add__(self, other):
+#         if self.only_pos() and other.only_pos():
+#             result = Unamber(self._num + other._num)
+#             return result
+#         else:
+#             return "Cannot add non-positive numers"
+
+#     def __sub__(self, other):
+#         if self.only_pos() and other.only_pos():
+#             result = Unamber(self._num - other._num)
+#             return result
+#         else:
+#             return "Cannot sub non-positive numers"
+        
+#     def __truediv__(self, other):
+#         if self.only_pos() and other.only_pos():
+#             result = Unamber(self._num / other._num)
+#             return result
+#         else:
+#             return "Cannot div non-positive numers"
+
+# num1 = Unamber(-6)
+# num2 = Unamber(8)
+# print(num1 / num2)
+
+

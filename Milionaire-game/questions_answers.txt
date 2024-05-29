@@ -1,0 +1,152 @@
+[
+    {
+        "question": "Who was the Founder of Apple?",
+        "answers": {
+            "A": "Bill Gates",
+            "B": "Mark Zuck.",
+            "C": "Steve Jobs",
+            "D": "Tim Cook"
+        },
+        "rightAnswer": "C"
+    },
+    {
+        "question": "Who won the FIFA ballon dor in 2020 ?",
+        "answers": {
+            "A": "Messi",
+            "B": "Cristiano R.",
+            "C": "Lewandowski",
+            "D": "Nobody"
+        },
+        "rightAnswer": "D"
+    },
+    {
+        "question": "Who was the president of USA in 2005?",
+        "answers": {
+            "A": "Barak Obama",
+            "B": "Joe Biden",
+            "C": "Dan Bilz.",
+            "D": "George Bush"
+        },
+        "rightAnswer": "D"
+    },
+    {
+        "question": "In which country is Angel falls located?",
+        "answers": {
+            "A": "Brazil",
+            "B": "Venezuela",
+            "C": "Argentina",
+            "D": "Uruguay"
+        },
+        "rightAnswer": "B"
+    },
+    {
+        "question": "How many continents are there in the world?",
+        "answers": {
+            "A": "3",
+            "B": "8",
+            "C": "7",
+            "D": "6"
+        },
+        "rightAnswer": "C"
+    },
+    {
+        "question": "What is the capital of Campodia?",
+        "answers": {
+            "A": "Quito",
+            "B": "Phnom Penh",
+            "C": "Bogota",
+            "D": "Havana"
+        },
+        "rightAnswer": "B"
+    },
+    {
+        "question": "What is the largest ocean in the world?",
+        "answers": {
+            "A": "Pacific Oc.",
+            "B": "Indian Oc.",
+            "C": "Arctic Oc.",
+            "D": "Atlantic Oc."
+        },
+        "rightAnswer": "A"
+    },
+    {
+        "question": "When was the USSR founded?",
+        "answers": {
+            "A": "1987",
+            "B": "1935",
+            "C": "1922",
+            "D": "1923"
+        },
+        "rightAnswer": "C"
+    },
+    {
+        "question": "How many days are there in a leep year?",
+        "answers": {
+            "A": "364",
+            "B": "366",
+            "C": "365",
+            "D": "363"
+        },
+        "rightAnswer": "B"
+    },
+    {
+        "question": "Which one is the first fully supported 64-bit operating system?",
+        "answers": {
+            "A": "Windows",
+            "B": "Linux",
+            "C": "Mac",
+            "D": "Android"
+        },
+        "rightAnswer": "B"
+    },
+    {
+        "question": "Which is the largest country in the world?",
+        "answers": {
+            "A": "Canada",
+            "B": "USA",
+            "C": "Russia",
+            "D": "China"
+        },
+        "rightAnswer": "C"
+    },
+    {
+        "question": "Who founded microsoft?",
+        "answers": {
+            "A": "Jeff Bezos",
+            "B": "Ilon Mask",
+            "C": "Jack Ma",
+            "D": "Bill Gates"
+        },
+        "rightAnswer": "D"
+    },
+    {
+        "question": "What is the largest planet in the solar system?",
+        "answers": {
+            "A": "Saturn",
+            "B": "Mars",
+            "C": "Jupiter",
+            "D": "Venus"
+        },
+        "rightAnswer": "C"
+    },
+    {
+        "question": "Who is the lead singer of The Beatles?",
+        "answers": {
+            "A": "Elton John",
+            "B": "Bon Scott",
+            "C": "Viktor Tsoi",
+            "D": "John Lennon"
+        },
+        "rightAnswer": "D"
+    },
+    {
+        "question": "Where Jesus was born ?",
+        "answers": {
+            "A": "Jerusalem",
+            "B": "Bethlehem",
+            "C": "Hebron",
+            "D": "Tiberias"
+        },
+        "rightAnswer": "B"
+    }
+]

@@ -370,7 +370,7 @@ def help_audience():
     # append help_bar and variants in configs, to destroy after answering
     configs["help_audience"] = []
     percentage = {}
-    wrong_answer_sum = root
+    wrong_answer_sum = 0
 
     # the loop for put help_bar and variants in click help_audience
     for key, value in help_bar_and_variants.items():
